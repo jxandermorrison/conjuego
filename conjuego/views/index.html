@@ -1,0 +1,20 @@
+{% extends "parent.html" %}
+
+{% block body %}
+<div class="container h-100">
+	<div class="row h-100">
+		<div class="col align-self-center text-center">
+			<h6>Quiero aprender</h6>
+			<form action="/en">
+				<button type="submit" class="btn btn-primary">English</button>
+			</form>
+		</div>
+		<div class="col align-self-center text-center">
+			<h6>I want to learn</h6>
+			<form action="/es">
+				<button type="submit" class="btn btn-primary">Español</button>
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}
