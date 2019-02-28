@@ -1,0 +1,30 @@
+{% extends "parent.html" %}
+
+{% block body %}
+
+<div class="container">
+	<div class="row">
+		<div>
+			<p>Infinitivo</p>
+			<p>{{ result.infinitive }}</p>
+		</div>
+	</div>
+		<div>
+			<p>Tema</p>
+			<p>{{ result.subject }}</p>
+		</div>
+		<div>
+			<p>Aspecto</p>
+			<p>{{ result.mood }}</p>
+		</div>
+		<div>
+			<p>Tenso</p>
+			<p>{{ result.tense }}</p>
+		</div>
+		<div>
+		<button id="reveal">Rendirte</button>
+		<div id="respuesta">
+		</div>
+</div>
+
+{% endblock %}

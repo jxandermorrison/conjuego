@@ -8,7 +8,7 @@ var monk = require('monk');
 
 var app = express();
 
-var db = monk("localhost:27017/verbs")
+var db = monk("localhost:27017/verbs");
 
 nunjucks.configure("views", {
 	autoescape: true,
@@ -21,13 +21,26 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get("/", (req, res) => {
+	res.render("index.html");
+});
+
 app.use(function(req, res, next) {
 	req.db = db;
 	next();
-}
+});
 
-app.get("/", (req, res) => {
-	res.render("index.html");
+app.get("/en/", (req, res) => {
+	var collection = db.get("english")
+	var num;
+	collection.count({}, (err, result) => {
+		var target = Math.floor(Math.random() * result);
+		collection.findOne({id: target}, (err, result) => {
+			res.render("english.html", {
+				result: result
+			});
+		});
+	});
 });
 
 module.exports = app;
