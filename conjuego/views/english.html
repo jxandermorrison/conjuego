@@ -4,25 +4,28 @@
 
 <div class="container">
 	<div class="row">
-		<div>
+		<div id="infinitivo">
 			<p>Infinitivo</p>
-			<p>{{ result.infinitive }}</p>
 		</div>
 	</div>
-		<div>
+		<div id="tema">
 			<p>Tema</p>
-			<p>{{ result.subject }}</p>
 		</div>
-		<div>
+		<div id="aspecto">
 			<p>Aspecto</p>
-			<p>{{ result.mood }}</p>
 		</div>
-		<div>
+		<div id="tenso">
 			<p>Tenso</p>
-			<p>{{ result.tense }}</p>
 		</div>
 		<div>
-		<button id="reveal">Rendirte</button>
+			<div class="input-group mb-3">
+				<input type="text" class="form-control">
+				<div class="input-group-append">
+					<button class="btn btn-outline-secondary" type="button" id="button-addon2">Submit</button>
+				</div>
+			</div>
+			<button id="reveal">Rendirte</button>
+		</div>
 		<div id="respuesta">
 		</div>
 </div>

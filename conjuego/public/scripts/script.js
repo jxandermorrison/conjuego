@@ -1,5 +1,10 @@
-$("#respuesta").hide();
+$(document).ready(function() {
 
-$("#reveal").click(function() {
-	$("#respuesta").fadeToggle(300);
+	$.getJSON("/en/verb", function(result) {
+		$("#infinitivo").html(result.infinitive);
+		$("#tema").html(result.subject);
+		$("#aspecto").html(result.mood);
+		$("#tenso").html(result.tense);
+	});
 });
+

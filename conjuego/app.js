@@ -31,14 +31,15 @@ app.use(function(req, res, next) {
 });
 
 app.get("/en/", (req, res) => {
+	res.render("english.html");
+});
+
+app.get("/en/verb", (req, res) => {
 	var collection = db.get("english")
-	var num;
 	collection.count({}, (err, result) => {
 		var target = Math.floor(Math.random() * result);
 		collection.findOne({id: target}, (err, result) => {
-			res.render("english.html", {
-				result: result
-			});
+			res.json(result);
 		});
 	});
 });
