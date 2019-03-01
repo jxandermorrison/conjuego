@@ -1,33 +1,41 @@
 {% extends "parent.html" %}
 
+
 {% block body %}
 
-<div class="container">
-	<div class="row">
-		<div id="infinitivo">
-			<p>Infinitivo</p>
+<div class="container h-100">
+	<div class="row h-100">
+		<div class="col align-self-center">
+			<div id="infinitivo" class="hints">
+				<p>Infinitivo</p>
+			</div>
+			<div id="tema" class="hints">
+				<p>Tema</p>
+			</div>
+			<div id="aspecto" class="hints">
+				<p>Aspecto</p>
+			</div>
+			<div id="tenso" class="hints">
+				<p>Tenso</p>
+			</div>
+			<form id="guessForm" autocomplete="off">
+				<input type="text" class="form-control" id="guess" name="guess" autofocus>
+				<div class="input-group-append">
+					<button class="btn btn-outline-secondary" type="submit" id="entregar">Entregar</button>
+				</div>
+			</form>
+			<div id="respuesta">
+				<span id="fullRespuesta"></span>
+				<span id="checkRespuesta"></span>
+			</div>
+			<button id="continue" class="btn btn-primary">Continuar</button>
 		</div>
 	</div>
-		<div id="tema">
-			<p>Tema</p>
-		</div>
-		<div id="aspecto">
-			<p>Aspecto</p>
-		</div>
-		<div id="tenso">
-			<p>Tenso</p>
-		</div>
-		<div>
-			<div class="input-group mb-3">
-				<input type="text" class="form-control">
-				<div class="input-group-append">
-					<button class="btn btn-outline-secondary" type="button" id="button-addon2">Submit</button>
-				</div>
-			</div>
-			<button id="reveal">Rendirte</button>
-		</div>
-		<div id="respuesta">
-		</div>
 </div>
+{% endblock %}
+
+{% block footer %}
+
+<script src="/scripts/enscript.js"></script>
 
 {% endblock %}
