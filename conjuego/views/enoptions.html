@@ -1,0 +1,62 @@
+<div class="row justify-content-md-center">
+		<div class="custom-control custom-switch">
+		  <input type="checkbox" class="custom-control-input" id="show-translation" checked>
+		  <label class="custom-control-label" for="show-translation">Mostrar Traducción</label>
+		</div>
+</div>
+<hr>
+<div class="row justify-content-md-center">
+	<div class="col-3 opciones">
+		<fieldset class="form-group">
+			<legend>Aspecto</legend>
+			<div class="custom-control custom-switch">
+			  <input type="checkbox" class="custom-control-input aspecto" id="indicativo" checked>
+			  <label class="custom-control-label" for="indicativo">Indicativo</label>
+			</div>
+			<div class="custom-control custom-switch">
+			  <input type="checkbox" class="custom-control-input aspecto" id="perfecto" checked>
+			  <label class="custom-control-label" for="perfecto">Perfecto</label>
+			</div>
+			<div class="custom-control custom-switch">
+			  <input type="checkbox" class="custom-control-input aspecto" id="imperativo" checked>
+			  <label class="custom-control-label" for="imperativo">Imperativo</label>
+			</div>
+			<div class="custom-control custom-switch">
+			  <input type="checkbox" class="custom-control-input aspecto" id="continuo" checked>
+			  <label class="custom-control-label" for="continuo">Continuo</label>
+			</div>
+			<div class="custom-control custom-switch">
+			  <input type="checkbox" class="custom-control-input aspecto" id="continuo-perfecto" checked>
+			  <label class="custom-control-label" for="continuo-perfecto">Continuo Perfecto</label>
+			</div>
+		</fieldset>
+		<p id="error-aspecto" class="text-danger error-msg">
+			Al menos uno debe estar seleccionado
+		</p>
+	</div>
+
+	<div class="col-3 opciones">
+		<fieldset class="form-group">
+			<legend>Tenso</legend>
+			<div class="custom-control custom-switch">
+			  <input type="checkbox" class="custom-control-input tenso" id="presente" checked>
+			  <label class="custom-control-label" for="presente">Presente</label>
+			</div>
+			<div class="custom-control custom-switch">
+			  <input type="checkbox" class="custom-control-input tenso" id="pasado" checked>
+			  <label class="custom-control-label" for="pasado">Pasado</label>
+			</div>
+			<div class="custom-control custom-switch">
+			  <input type="checkbox" class="custom-control-input tenso" id="futuro" checked>
+			  <label class="custom-control-label" for="futuro">Futuro</label>
+			</div>
+		</fieldset>
+		<p id="error-tenso" class="text-danger error-msg">
+			Al menos uno debe estar seleccionado
+		</p>
+	</div>
+</div>
+<div class="row justify-content-md-center">
+	<button class="btn btn-primary" id="update-options">Update</button>
+</div>
+

@@ -1,3 +1,91 @@
 html, body {
 	height: 100%;
+	font-family: "Varela Round", sans-serif;
+}
+
+body {
+	color: #fff;
+	background: linear-gradient(-45deg,#7c4f00, #2e004f, #001f51, #7c4f00);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+
+legend {
+	font-size: 1.2em;
+}
+
+hr {
+	width: 50%;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+#continue {
+	display: none;
+}
+
+.hints h6 {
+	font-weight: bold;
+}
+
+.hints p {
+	font-size: 1.4em;
+}
+
+#continue {
+	margin: 20px;
+}
+
+.white-bg-opaque {
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+#copyright {
+	font-size: 0.5em;
+}
+
+#quiz-options {
+	display: none;
+}
+
+.error-msg {
+	display: none;
+	font-size: 0.9em;
+	line-height: 1em;
 }

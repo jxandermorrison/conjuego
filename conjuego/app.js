@@ -35,12 +35,18 @@ app.get("/en/", (req, res) => {
 });
 
 app.get("/en/verb", (req, res) => {
-	var collection = db.get("english")
-	collection.count({}, (err, result) => {
-		var target = Math.floor(Math.random() * result);
-		collection.findOne({id: target}, (err, result) => {
-			res.json(result);
-		});
+	var collection = db.get("english");
+	
+	collection.aggregate([
+		{$match:
+			{$and: [
+				{mood: {$in: req.query.mood}},
+				{tense: {$in: req.query.tense}}
+			]}
+		},
+		{"$sample": {"size": 1}}
+	], (err, result) => {
+		res.json(result);
 	});
 });
 
