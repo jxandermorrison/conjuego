@@ -3,66 +3,30 @@
 
 {% block body %}
 
-<div class="container h-100">
-	<div class="container h-25 py-3">
-		<div class="row">
-			<button type="button" id="ops" class="btn btn-outline-light 
-				btn-sm mx-auto">
-				Opciones
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+	<div class="container col-md-6">
+		<div class="dropdown">
+			<button class="btn btn-primary btn-default" type="button" id="opciones">
+				Opciones 
 			</button>
-		</div>
-		<form class="container p-5" id="quiz-options">
+			<div class="dropdown-menu dropdown-menu-center w-100 text-center" style="display:none">
 				{% include "enoptions.html" %}
-		</form>
-	</div>
-	<div class="row h-25 py-2">
-		<div class="col align-self-end">
-			<div id="tema" class="hints text-center">
-				<h6>Tema</h6>
-				<p></p>
-			</div>
-		</div>
-		<div class="col align-self-end">
-			<div id="infinitivo" class="hints text-center">
-				<h6>Infinitivo</h6>
-				<p></p>
-			</div>
-		</div>
-		<div class="col align-self-end">
-			<div id="aspecto" class="hints text-center">
-				<h6>Aspecto</h6>
-				<p></p>
-			</div>
-		</div>
-		<div class="col align-self-end">
-			<div id="tenso" class="hints text-center">
-				<h6>Tenso</h6>
-				<p></p>
 			</div>
 		</div>
 	</div>
+</nav>
 
-	<div class="row h-25 py-2">
-		<div class="col-8 align-self-start text-center mx-auto">
-			<!-- BEGIN FORM -->
-			<form id="guessForm" autocomplete="off">
-				<div class="input-group mb-3 text-center">
-					<input type="text" class="form-control" id="guess" name="guess" autofocus>
-					<div class="input-group-append">
-						<button class="btn btn-outline-light" type="submit" id="entregar">Entregar</button>
-					</div>
-				</div>
-			</form>
-			<!-- END FORM -->
-			<div id="respuesta" class="py-4 rounded">
-			</div>
-			<button id="continue" class="btn btn-primary">Continuar</button>
-		</div>
-	</div>
-	<div class="row h-25 py-2">
-		<p id="copyright" class="align-self-end mx-auto">&copy; 2019 xander morrison</p>
+<div class="container-fluid d-flex align-items-center">
+	<div class="d-flex flex-column justify-content-center">
+		<div>1</div>
+		<div>1</div>
+		<div>1</div>
+		<div>1</div>
 	</div>
 </div>
+
+<footer></footer>
+
 {% endblock %}
 
 {% block footer %}

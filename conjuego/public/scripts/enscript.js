@@ -1,7 +1,7 @@
 var opciones = {};
 
 $(document).ready(function() {
-
+/*
 	setOptions();
 	refreshPage();
 
@@ -83,9 +83,6 @@ $(document).ready(function() {
 
 	// CLOSE OPTIONS
 
-	$("#ops").click(function() {
-		$("#quiz-options").fadeToggle();
-	});
 
 	$("#update-options").click(function(e) {
 		e.preventDefault();
@@ -160,6 +157,16 @@ $(document).ready(function() {
 
 	$("#continue").click(function() {
 		refreshPage();
+	});
+
+*/
+
+	$("#update-options").click(function() {
+		$(".dropdown-menu").fadeToggle("fast");
+	});
+
+	$("#opciones").click(function(e) {
+		$(".dropdown-menu").fadeToggle("fast");
 	});
 
 

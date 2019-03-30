@@ -50,4 +50,6 @@ app.get("/en/verb", (req, res) => {
 	});
 });
 
-module.exports = app;
+app.listen(3000, () => {
+	console.log("*Listening on localhost:3000");
+});
