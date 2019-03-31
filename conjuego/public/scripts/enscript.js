@@ -1,6 +1,19 @@
 var opciones = {};
 
 $(document).ready(function() {
+
+	$("#update-options").click(function() {
+		$(".dropdown-menu").fadeToggle("fast");
+	});
+
+	$("#opciones").click(function(e) {
+		$(".dropdown-menu").fadeToggle("fast");
+	});
+
+
+});
+
+
 /*
 	setOptions();
 	refreshPage();
@@ -160,14 +173,3 @@ $(document).ready(function() {
 	});
 
 */
-
-	$("#update-options").click(function() {
-		$(".dropdown-menu").fadeToggle("fast");
-	});
-
-	$("#opciones").click(function(e) {
-		$(".dropdown-menu").fadeToggle("fast");
-	});
-
-
-});

@@ -5,14 +5,21 @@ exports.test = function(req, res) {
 }
 
 exports.fetchVerb = function(req, res) {
-	EnglishVerb.countDocuments().exec(function (err, count) {
+	mood = JSON.parse(req.query.mood);
+	tense = JSON.parse(req.query.tense);
+	EnglishVerb.countDocuments()
+		.where("mood").in(mood)
+		.where("tense").in(tense)
+		.exec(function (err, count) {
 
 		var random = Math.floor(Math.random() * count);
 
-		EnglishVerb.findOne().skip(random).exec(
-			function(err, result) {
-				console.log(result);
+		EnglishVerb.findOne()
+			.where("mood").in(mood)
+			.where("tense").in(tense)
+			.skip(random)
+			.exec(function(err, result) {
+				res.send(result);
 			});
-	});
-	res.send("Success");
+		});
 }
