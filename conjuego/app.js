@@ -4,16 +4,24 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var nunjucks = require('nunjucks');
 var mongodb = require("mongodb");
-var monk = require('monk');
+var mongoose = require("mongoose");
+
+var verbs = require("./routes/verbs.route");
 
 var app = express();
 
-var db = monk("localhost:27017/verbs");
+mongoose.connect("mongodb://localhost/verbs", {useNewUrlParser: true});
+mongoose.Promie = global.Promise;
+
+var db = mongoose.connection;
+db.on("error", console.error.bind(console, "Mongo connection error:"));
 
 nunjucks.configure("views", {
 	autoescape: true,
 	express: app
 });
+
+
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -21,33 +29,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get("/", (req, res) => {
-	res.render("index.html");
-});
+app.use("/en/verbs", verbs);
 
-app.use(function(req, res, next) {
-	req.db = db;
-	next();
-});
-
-app.get("/en/", (req, res) => {
+app.get("/en", (req, res) => {
 	res.render("english.html");
 });
 
-app.get("/en/verb", (req, res) => {
-	var collection = db.get("english");
-	
-	collection.aggregate([
-		{$match:
-			{$and: [
-				{mood: {$in: req.query.mood}},
-				{tense: {$in: req.query.tense}}
-			]}
-		},
-		{"$sample": {"size": 1}}
-	], (err, result) => {
-		res.json(result);
-	});
+app.get("/", (req, res) => {
+	res.render("index.html");
 });
 
 app.listen(3000, () => {
