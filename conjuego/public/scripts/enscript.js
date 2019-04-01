@@ -1,15 +1,69 @@
-var opciones = {};
+function setOpts() {
+
+	var opciones = {
+		"mood": [],
+		"tense": []
+	};
+
+	$("input.aspecto:checked").each(function(index) {
+		var inputId = this.id;
+		var search = `label[for='${inputId}']`;
+		var text = $(search).html();
+		opciones.mood.push(text);
+	});
+
+	$("input.tenso:checked").each(function(index) {
+		var inputId = this.id;
+		var search = `label[for='${inputId}']`;
+		var text = $(search).html();
+		opciones.tense.push(text);
+	});
+
+	return opciones;
+}
 
 $(document).ready(function() {
 
-	$("#update-options").click(function() {
+	var opciones = setOpts();
+
+	$.getJSON("/en/verbs/fetch", opciones, (result) => {
+		var subject = result.subject[0].toUpperCase() + result.subject.slice(1);
+		var infinitive = result.infinitive;
+		var mood = result.mood;
+		var tense = result.tense;
+		var definition = result.definition;
+		var translation = result.translation[0].toUpperCase() + result.translation.slice(1);
+		var answer = result.answer;
+
+		$("#sujeto").html(subject);
+		$("#infinitivo").html(infinitive);
+		$("#aspecto").html(mood);
+		$("#tenso").html(tense);
+
+		if (mood.toLowerCase() != "imperativo")
+			answer = [subject, answer].join(" ");
+		else {
+			var response = answer[0].toUpperCase();
+			answer = response + answer.slice(1);
+		}
+
+		$("#correct").html(answer);
+		$("#definition").html(infinitive + " = " + definition);
+		$("#translation").html(translation);
+	});
+
+	$("body").click(function() {
+		$(".dropdown-menu").fadeOut("fast");
+	});
+
+	$("#update-options, #opciones").click(function(e) {
+		e.stopPropagation();
 		$(".dropdown-menu").fadeToggle("fast");
 	});
 
-	$("#opciones").click(function(e) {
-		$(".dropdown-menu").fadeToggle("fast");
+	$(".dropdown-menu").click(function(e) {
+		e.stopPropagation();
 	});
-
 
 });
 
