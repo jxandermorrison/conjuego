@@ -1,3 +1,85 @@
+html, body {
+	height: 100%;
+	font-family: "Varela Round", sans-serif;
+}
+
+nav, footer {
+	height: 10%;
+}
+
+.dropdown-menu-center {
+    right: auto;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+	padding: 20px;
+	width: 90vw !important;
+	max-width: 450px !important;
+}
+
+/* STYLES */
+
+.flex-column {
+	width: 100%;
+}
+
+.dropdown {
+	margin: auto;
+}
+
+.container-fluid {
+	height: 80%;
+}
+
+.titles {
+	color: #999;
+}
+
+.error-msg {
+	display: none;
+}
+
+#answer-section {
+	display: none;
+}
+
+#continue {
+	display: none;
+}
+
+/* COLORING GUESS INFO */
+
+.correct-guess h6 {
+	color: #004000;
+}
+
+.correct-guess h5 {
+	color: green;
+}
+
+.incorrect-guess h6 {
+	color: #5a0000;
+}
+
+.incorrect-guess h5 {
+	color: red;
+}
+
+.incorrect-guess p {
+	color: red;
+	font-style: italic;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (min-width: 600px) {
+	#guess-form {
+		width: 550px;
+		margin: auto;
+	}
+}
+
 @media only screen and (max-height: 600px) {
 	h5 {
 		font-size: 0.9rem;
@@ -33,43 +115,3 @@
 		margin: 0 0 6px;
 	}
 }	
-
-html, body {
-	height: 100%;
-	font-family: "Varela Round", sans-serif;
-}
-
-.dropdown {
-	margin: auto;
-}
-
-.dropdown-menu-center {
-    right: auto;
-    left: 50%;
-    -webkit-transform: translate(-50%, 0);
-    -o-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
-	padding: 20px;
-	width: 90vw !important;
-	max-width: 450px !important;
-}
-
-nav, footer {
-	height: 10%;
-}
-
-#answer-section {
-	display: none;
-}
-
-.container-fluid {
-	height: 80%;
-}
-
-.titles {
-	color: #999;
-}
-
-.error-msg {
-	display: none;
-}

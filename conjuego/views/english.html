@@ -9,7 +9,8 @@
 			<button class="btn btn-primary btn-default" type="button" id="opciones">
 				Opciones 
 			</button>
-			<div class="dropdown-menu dropdown-menu-center w-100 text-center" style="display:none">
+			<div class="dropdown-menu dropdown-menu-center w-100 text-center" id="opts-window" 
+				style="display:none">
 				{% include "enoptions.html" %}
 			</div>
 		</div>
@@ -18,20 +19,23 @@
 
 <div class="container-fluid d-flex align-items-center justify-content-center">
 	<div class="d-flex flex-column text-center">
-		<h6 class="titles">Sujeto:</h6><h5 id="sujeto">Test</h5>
-		<h6 class="titles">Infinitivo:</h6><h5 id="infinitivo">Test</h5>
-		<h6 class="titles">Aspecto:</h6><h5 id="aspecto">Test</h5>
-		<h6 class="titles">Tenso:</h6><h5 id="tenso">Test</h5>
-		<div class="input-group my-4">
-		  <input type="text" class="form-control" autofocus aria-label="Recipient's username" aria-describedby="button-addon2">
-		  <div class="input-group-append">
-			<button class="btn btn-outline-success" type="submit" id="button-addon2">Enviar</button>
-		  </div>
-		</div>
+		<h6 class="titles">Sujeto:</h6><h5 id="sujeto"></h5>
+		<h6 class="titles">Infinitivo:</h6><h5 id="infinitivo"></h5>
+		<h6 class="titles">Aspecto:</h6><h5 id="aspecto"></h5>
+		<h6 class="titles">Tenso:</h6><h5 id="tenso"></h5>
+		<form id="guess-form" autocomplete="off">
+			<div class="input-group my-4">
+			  <input type="text" class="form-control" id="guess" name="user-guess" autofocus>
+			  <div class="input-group-append">
+				<button class="btn btn-outline-success" type="submit" id="send">Enviar</button>
+			  </div>
+			</div>
+		</form>
 		<div id="answer-section">
-			<h6 class="titles">Correcta:</h6><h5 id="correct"></h5>
-			<h6 class="titles">Definición:</h6><h5 id="definition"></h5>
-			<h6 class="titles">Traducción:</h6><h5 id="translation"></h5>
+			<p id="wrong-message"></p>
+			<h6>Correcta:</h6><h5 id="correct"></h5>
+			<h6>Definición:</h6><h5 id="definition"></h5>
+			<h6 class="translation" id="translation-title"></h6><h5 class="translation" id="translation"></h5>
 			<br>
 			<button class="btn btn-success" id="continue">Continuar</button>
 		</div>

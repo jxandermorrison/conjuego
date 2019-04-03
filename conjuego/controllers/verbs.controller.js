@@ -5,16 +5,19 @@ exports.test = function(req, res) {
 }
 
 exports.fetchVerb = function(req, res) {
+	var mood = req.query.mood;
+	var tense = req.query.tense;
+
 	EnglishVerb.countDocuments()
-		//.where("mood").in(mood)
-		//.where("tense").in(tense)
+		.where("mood").in(mood)
+		.where("tense").in(tense)
 		.exec(function (err, count) {
 
 		var random = Math.floor(Math.random() * count);
 
 		EnglishVerb.findOne()
-			//.where("mood").in(mood)
-			//.where("tense").in(tense)
+			.where("mood").in(mood)
+			.where("tense").in(tense)
 			.skip(random)
 			.exec(function(err, result) {
 				res.send(result);
