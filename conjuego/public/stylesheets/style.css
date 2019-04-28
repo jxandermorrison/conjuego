@@ -71,6 +71,13 @@ nav, footer {
 	font-style: italic;
 }
 
+h6 {
+	margin: 0 0 8px;
+}
+h5 {
+	margin: 0 0 16px;
+}
+
 /* MEDIA QUERIES */
 
 @media only screen and (min-width: 600px) {
